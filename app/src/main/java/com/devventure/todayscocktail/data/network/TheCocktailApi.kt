@@ -1,12 +1,10 @@
-package com.devventure.todayscocktail.data.network
+package com.example.cocktailrecipes.data.network
 
-import com.devventure.todayscocktail.data.DrinksListRemoteEntity
+import com.example.cocktailrecipes.data.model.DrinkList
+import retrofit2.Response
 import retrofit2.http.GET
 
 interface TheCocktailApi {
     @GET("filter.php?a=Alcoholic")
-    suspend fun getDrinks(): DrinksListRemoteEntity
-
-    @GET("filter.php?a=Non_Alcoholic")
-    suspend fun getDrinksNonAlcoholic(): DrinksListRemoteEntity
+    suspend fun getCocktail(): Response<DrinkList>
 }

@@ -1,61 +1,55 @@
-package com.devventure.todayscocktail
+package com.example.cocktailrecipes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.ViewModelProvider;
 import com.bumptech.glide.Glide
-import com.devventure.todayscocktail.data.DrinksListRemoteEntity
-import com.devventure.todayscocktail.data.network.CocktailService
+import com.example.cocktailrecipes.data.db.DrinkDao
+import com.example.cocktailrecipes.data.model.Drink
+import com.example.cocktailrecipes.data.model.DrinkList
+import com.example.cocktailrecipes.data.network.CocktailService
+import com.example.cocktailrecipes.data.repository.DrinkRepository
+
+import com.example.cocktailrecipes.presentation.DrinkViewModel
+import com.example.cocktailrecipes.presentation.adapters.DrinkAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.lang.Exception
+import androidx.lifecycle.Observer
+import com.devventure.todayscocktail.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var drinkName: TextView
-    lateinit var drinkContainer: ConstraintLayout
-    lateinit var drinkImage: ImageView
+    private var _binding: ActivityMainBinding? = null
+    private val binding: ActivityMainBinding
+        get() = _binding!!
+
+    private val viewModel: DrinkViewModel by viewModel()
+    private lateinit var mAdapter: DrinkAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        drinkName = findViewById(R.id.drinkName)
-        drinkContainer = findViewById(R.id.drinkContainer)
-        drinkImage = findViewById(R.id.drinkImage)
-
-        getDrink()
-
-        drinkContainer.setOnClickListener {
-            getDrink()
-        }
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        subscribeObservers()
+        initRecyclerView()
     }
 
-    private fun getDrink() {
-        lifecycleScope.launch {
-            try {
-                val response = requestDrinks()
-                val drink = response.drinkRemoteEntities.random()
-                drinkName.text = drink.strDrink
-
-                Glide.with(this@MainActivity)
-                    .load(drink.strDrinkThumb)
-                    .into(drinkImage)
-            } catch (e: Exception) {
-                Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_LONG).show()
-            }
-        }
-        // executar requisição
-        // a partir da resposta escolher um drink aleatório
-        // colocar o nome do drink aleatório escolhido no textview
+    private fun subscribeObservers() {
+        viewModel.getDrinks().observe(this@MainActivity, Observer {
+            mAdapter.drinkList = it
+        })
     }
 
-    private suspend fun requestDrinks(): DrinksListRemoteEntity {
-        return withContext(Dispatchers.IO) {
-            CocktailService.service.getDrinks()
+    private fun initRecyclerView() {
+        mAdapter = DrinkAdapter()
+        binding.rvDrinks.apply {
+            adapter = mAdapter
         }
     }
 }

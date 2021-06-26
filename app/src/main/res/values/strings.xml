@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">TodaysCocktail</string>
+    <string name="app_name">CocktailRecipes</string>
+    <string name="tituloSplash">Your Drink</string>
 </resources>
