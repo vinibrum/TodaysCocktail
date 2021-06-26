@@ -16,4 +16,5 @@ class CocktailApplication : Application() {
             modules(modules = AppModule.module)
         }
     }
+
 }

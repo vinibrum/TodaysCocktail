@@ -18,7 +18,7 @@ class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
         }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val drinkImage: ImageView = itemView.findViewById(R.id.ivDrink)
+        private val drinkImage: ImageView = itemView.findViewById(R.id.imageView_drink)
         private val drinkTitle: TextView = itemView.findViewById(R.id.tvDrinkTitle)
 
         fun bind(drink: Drink) {
