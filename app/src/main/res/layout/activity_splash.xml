@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="?attr/layout_background"
     android:padding="40dp"
     tools:context=".MainActivity">
 
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abel"
-        android:text="cheers"
+        android:text="@string/splash_text"
         android:textColor="#f2aeb7"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"

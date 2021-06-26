@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Cocktail Recipes</string>
-    <string name="tituloSplash">Your Drink</string>
+    <string name="splash_text">cheers</string>
 </resources>
