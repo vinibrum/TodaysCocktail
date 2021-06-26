@@ -1,10 +1,10 @@
-package com.example.cocktailrecipes.data.db
+package com.devventure.todayscocktail.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.cocktailrecipes.data.model.Drink
+import com.devventure.todayscocktail.data.model.Drink
 
 @Database(
     entities = [Drink::class],

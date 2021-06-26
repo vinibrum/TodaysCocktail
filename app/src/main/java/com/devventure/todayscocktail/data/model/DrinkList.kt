@@ -1,4 +1,4 @@
-package com.example.cocktailrecipes.data.model
+package com.devventure.todayscocktail.data.model
 
 data class DrinkList(
     val drinks: List<Drink>

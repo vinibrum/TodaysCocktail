@@ -1,8 +1,8 @@
-package com.example.cocktailrecipes.data.repository
+package com.devventure.todayscocktail.data.repository
 
-import com.example.cocktailrecipes.data.db.DrinkDao
-import com.example.cocktailrecipes.data.model.Drink
-import com.example.cocktailrecipes.data.network.CocktailService
+import com.devventure.todayscocktail.data.db.DrinkDao
+import com.devventure.todayscocktail.data.model.Drink
+import com.devventure.todayscocktail.data.network.CocktailService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,4 +1,4 @@
-package com.example.cocktailrecipes.data.network
+package com.devventure.todayscocktail.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,7 +1,7 @@
-package com.example.cocktailrecipes
+package com.devventure.todayscocktail
 
 import android.app.Application
-import com.example.cocktailrecipes.di.AppModule
+import com.devventure.todayscocktail.di.AppModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -1,4 +1,4 @@
-package com.example.cocktailrecipes.data.model
+package com.devventure.todayscocktail.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

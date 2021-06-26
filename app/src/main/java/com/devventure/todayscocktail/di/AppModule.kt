@@ -1,8 +1,8 @@
-package com.example.cocktailrecipes.di
+package com.devventure.todayscocktail.di
 
-import com.example.cocktailrecipes.data.db.CocktailDatabase
-import com.example.cocktailrecipes.data.repository.DrinkRepository
-import com.example.cocktailrecipes.presentation.DrinkViewModel
+import com.devventure.todayscocktail.data.db.CocktailDatabase
+import com.devventure.todayscocktail.data.repository.DrinkRepository
+import com.devventure.todayscocktail.presentation.DrinkViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

@@ -1,8 +1,8 @@
-package com.example.cocktailrecipes.data.db
+package com.devventure.todayscocktail.data.db
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.example.cocktailrecipes.data.model.Drink
+import com.devventure.todayscocktail.data.model.Drink
 
 @Dao
 interface DrinkDao {

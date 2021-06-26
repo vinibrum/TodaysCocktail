@@ -5,7 +5,7 @@
     android:id="@+id/drinkContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cocktailrecipes.MainActivity">
+    tools:context="com.devventure.todayscocktail.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDrinks"

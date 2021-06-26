@@ -1,4 +1,4 @@
-package com.example.cocktailrecipes.presentation.adapters
+package com.devventure.todayscocktail.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devventure.todayscocktail.R
-
-import com.example.cocktailrecipes.data.model.Drink
+import com.devventure.todayscocktail.data.model.Drink
 
 class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
     var drinkList = listOf<Drink>()

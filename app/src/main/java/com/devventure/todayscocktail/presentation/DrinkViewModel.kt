@@ -1,11 +1,11 @@
-package com.example.cocktailrecipes.presentation
+package com.devventure.todayscocktail.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cocktailrecipes.data.model.Drink
-import com.example.cocktailrecipes.data.repository.DrinkRepository
+import com.devventure.todayscocktail.data.model.Drink
+import com.devventure.todayscocktail.data.repository.DrinkRepository
 import kotlinx.coroutines.launch
 
 class DrinkViewModel(private val repository: DrinkRepository) : ViewModel() {
