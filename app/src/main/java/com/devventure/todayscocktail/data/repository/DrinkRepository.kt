@@ -25,7 +25,9 @@ class DrinkRepository(private val dao: DrinkDao) : IDrinkRepository {
     private suspend fun getDrinksFromAPI(): List<Drink>? {
         return withContext(Dispatchers.IO) {
             val response = CocktailService.service.getCocktail()
-            response.body()?.drinks
+            val drinkList =  response.body()?.drinks
+            drinkList?.let {dao.saveDrinksToDB(it)}
+            drinkList
         }
     }
 
