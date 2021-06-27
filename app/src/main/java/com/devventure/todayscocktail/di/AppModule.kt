@@ -17,6 +17,9 @@ object AppModule {
         single {
             get<CocktailDatabase>().drinksDao()
         }
+        single {
+            get<CocktailDatabase>().drinkDetailDao()
+        }
         viewModel{
             DrinkViewModel(get())
         }

@@ -5,14 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.devventure.todayscocktail.data.model.Drink
+import com.devventure.todayscocktail.data.model.DrinkDetail
 
 @Database(
-    entities = [Drink::class],
+    entities = [Drink::class, DrinkDetail::class],
     version = 1,
     exportSchema = false
 )
 abstract class CocktailDatabase : RoomDatabase() {
     abstract fun drinksDao(): DrinkDao
+    abstract fun drinkDetailDao(): DrinkDetailDao
 
     companion object {
         @Volatile // Torna esse campo imediatamente visivel apra outras threads
