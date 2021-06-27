@@ -7,10 +7,13 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_drink"
-        style="@style/item_drink_image"
         android:src="@drawable/ic_glass"
+        android:layout_height="120dp"
+        android:layout_width="120dp"
+        app:civ_border_color="#F1A5AF"
+        app:civ_border_width="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_drink_id"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,9 +23,9 @@
 
     <TextView
         android:id="@+id/tvDrinkTitle"
+        style="@style/item_drink_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/item_drink_title"
         app:layout_constraintBottom_toTopOf="@+id/tv_drink_id"
         app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
