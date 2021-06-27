@@ -14,6 +14,7 @@ buildscript {
         kotlin_version = "1.3.61"
         version_glide = "4.11.0"
         koinVersion = "2.0.1"
+        navigationVersion = "2.3.5"
     }
 
     repositories {
