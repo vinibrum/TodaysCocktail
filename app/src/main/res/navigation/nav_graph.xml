@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/newDrinkFragment"
-        android:name="com.devventure.todayscocktail.presentation.NewDrinkFragment"
-        android:label="fragment_new_drink"
-        tools:layout="@layout/fragment_new_drink" />
+        android:name="com.devventure.todayscocktail.presentation.DetailDrinkFragment"
+        android:label="Meu Drink"
+        tools:layout="@layout/fragment_detail_drink" />
 </navigation>
