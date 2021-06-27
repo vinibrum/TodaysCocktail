@@ -34,7 +34,7 @@ class DrinkAdapter(private val interaction: Interaction?) : RecyclerView.Adapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.item_drink, parent, false)
-        return MyViewHolder(view, interaction)
+        return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
