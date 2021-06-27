@@ -11,7 +11,7 @@ import com.devventure.todayscocktail.R
 import com.devventure.todayscocktail.data.model.Drink
 import de.hdodenhof.circleimageview.CircleImageView
 
-class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
+class DrinkAdapter(private val interaction: Interaction?) : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
     var drinkList = listOf<Drink>()
         set(value) {
             field = value
@@ -23,15 +23,18 @@ class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
         private val drinkTitle: TextView = itemView.findViewById(R.id.tvDrinkTitle)
 
         fun bind(drink: Drink) {
+            itemView.setOnClickListener {
+                interaction?.onItemSelected(drink)
+            }
             drinkTitle.text = drink.strDrink
-            Glide.with(itemView.getContext()).load(drink.strDrinkThumb).into(drinkImage)
+            Glide.with(itemView.context).load(drink.strDrinkThumb).into(drinkImage)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.item_drink, parent, false)
-        return MyViewHolder(view)
+        return MyViewHolder(view, interaction)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -41,5 +44,9 @@ class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
 
     override fun getItemCount(): Int {
         return drinkList.size
+    }
+
+    interface Interaction {
+        fun onItemSelected(item: Drink)
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listDrinksFragment">
+
+    <fragment
+        android:id="@+id/listDrinksFragment"
+        android:name="com.devventure.todayscocktail.presentation.ListDrinksFragment"
+        android:label="fragment_list_drink"
+        tools:layout="@layout/fragment_list_drink" >
+        <action
+            android:id="@+id/action_listDrinksFragment_to_newDrinkFragment"
+            app:destination="@id/newDrinkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newDrinkFragment"
+        android:name="com.devventure.todayscocktail.presentation.DetailDrinkFragment"
+        android:label="Meu Drink"
+        tools:layout="@layout/fragment_detail_drink" />
+</navigation>
