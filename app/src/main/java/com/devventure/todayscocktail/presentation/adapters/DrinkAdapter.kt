@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devventure.todayscocktail.R
 import com.devventure.todayscocktail.data.model.Drink
+import de.hdodenhof.circleimageview.CircleImageView
 
 class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
     var drinkList = listOf<Drink>()
@@ -18,7 +19,7 @@ class DrinkAdapter : RecyclerView.Adapter<DrinkAdapter.MyViewHolder>() {
         }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val drinkImage: ImageView = itemView.findViewById(R.id.imageView_drink)
+        private val drinkImage: CircleImageView = itemView.findViewById(R.id.imageView_drink)
         private val drinkTitle: TextView = itemView.findViewById(R.id.tvDrinkTitle)
 
         fun bind(drink: Drink) {
