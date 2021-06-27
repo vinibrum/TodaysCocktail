@@ -1,5 +1,8 @@
 package com.devventure.todayscocktail.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class DrinkDetailList(
-    val drinks: List<DrinkDetail>
+    @SerializedName("drinks")
+    val drinkDetailList: List<DrinkDetail>
 )
