@@ -3,7 +3,9 @@
 ## Sobre
 O aplicativo **Todays Cocktail** oferece ao usuário uma forma simples e prática de visualizar a receita de diversos Drinks e ainda compartilhar a receita com seus amigos. Um aplicativo indispensável para quem quer escolher a bebida ideal para a noite.
 <br/>
-![Alt Text](https://media.giphy.com/media/fl5yo0r5LlS1VDba7x/giphy.gif)
+
+Light Theme
+![Alt_Text](https://media.giphy.com/media/vWvTschh4fq9U1r9WV/giphy.gif)
 
 
 ## Ferramentas Utilizadas
